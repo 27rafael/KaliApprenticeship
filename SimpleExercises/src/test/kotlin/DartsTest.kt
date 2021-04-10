@@ -1,22 +1,22 @@
-import kotlin.test.Test
+import org.junit.Test
 import kotlin.test.assertEquals
 
 class DartsTest {
 
     @Test
-    fun `missed target`() = assertEquals(0, Darts.score(-9, 9))
+    fun `missed target`() = assertEquals(0, Darts.score(-9.0, 9.0))
 
     @Test
-    fun `on the outer circle`() = assertEquals(1, Darts.score(0, 10))
+    fun `on the outer circle`() = assertEquals(1, Darts.score(0.0, 10.0))
 
     @Test
-    fun `on the middle circle`() = assertEquals(5, Darts.score(-5, 0))
+    fun `on the middle circle`() = assertEquals(5, Darts.score(-5.0, 0.0))
 
     @Test
-    fun `on the inner circle`() = assertEquals(10, Darts.score(0, -1))
+    fun `on the inner circle`() = assertEquals(10, Darts.score(0.0, -1.0))
 
     @Test
-    fun `exactly on centre`() = assertEquals(10, Darts.score(0, 0))
+    fun `exactly on centre`() = assertEquals(10, Darts.score(0.0, 0.0))
 
     @Test
     fun `near the centre`() = assertEquals(10, Darts.score(-0.1, -0.1))
@@ -40,5 +40,5 @@ class DartsTest {
     fun `just outside the outer circle`() = assertEquals(0, Darts.score(7.1, -7.1))
 
     @Test
-    fun `asymmetric position between the inner and middle circles`() = assertEquals(5, Darts.score(0.5, -4))
+    fun `asymmetric position between the inner and middle circles`() = assertEquals(5, Darts.score(0.5, -4.0))
 }

@@ -19,4 +19,6 @@ class SpaceAgeTest {
 
     @Test
     fun ageOnVenus() {
-       val age = SpaceAge(189839836)
+        val age = SpaceAge(189839836)
+    }
+}

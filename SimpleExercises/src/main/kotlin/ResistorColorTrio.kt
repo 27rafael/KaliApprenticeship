@@ -1,6 +1,6 @@
 import kotlin.math.pow
 
-fun ResistorColorTrio(color1:String, color2:String, color3:String): String {
+fun ResistorColorTrio(color1: String, color2: String, color3: String): String {
     var first = 0
     var second = 0
     var third = 0
@@ -45,11 +45,13 @@ fun ResistorColorTrio(color1:String, color2:String, color3:String): String {
 
 
 
-    first*=100
-    second*=10
-    var final:Double = (first.toDouble()+second.toDouble())+10.0.pow(third)
+    first *= 100
+    second *= 10
+    val final: Double = (first.toDouble() + second.toDouble()) + 10.0.pow(third)
 
-    if(final == 1000.0) return "${final-(10.0.pow(3))} kiloohms"
-    else return "$final ohms"
+    return if (final == 1000.0) {
+        val x = final - (10.0.pow(3))
+        "${x.toInt()} kiloohms"
+    } else "${final.toInt()} ohms"
 
 }
